@@ -1,0 +1,48 @@
+{
+  "name": "dashboard",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "~1.15.2",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "^1.0.0",
+    "express": "3.5.2",
+    "express-session": "^1.15.6",
+    "expresse": "^1.0.2",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "method-override": "~2.3.6",
+    "mongodb": "^3.0.5",
+    "mongoose": "^5.3.3",
+    "monk": "^6.0.5",
+    "morgan": "~1.9.0",
+    "passport": "~0.3.2",
+    "passport-dailymotion": "0.0.4",
+    "passport-deezer": "^0.2.0",
+    "passport-facebook": "~2.1.1",
+    "passport-github": "^1.1.0",
+    "passport-google": "^0.3.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth2": "^0.1.6",
+    "passport-instagram": "^1.0.0",
+    "passport-linkedin": "^1.0.0",
+    "passport-linkedin-oauth2": "^1.5.0",
+    "passport-local": "~1.0.0",
+    "passport-steam": "^1.0.10",
+    "passport-twitch": "^1.0.3",
+    "passport-twitter": "~1.0.4",
+    "passport-yammer": "^0.2.0",
+    "session": "^0.1.0",
+    "vendor": "^1.7.0",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}

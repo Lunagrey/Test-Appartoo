@@ -1,0 +1,125 @@
+{
+	"client": {
+		"host": "10.101.53.35"
+	},
+	"server": {
+		"current_time": 1531680780,
+		"services": [
+			{
+				"name": "weather",
+				"widgets": [
+					{
+						"name": "cities_temperature",
+						"description": "Affichage de la temperature pour une ville",
+						"params": [
+							{
+								"name": "city",
+								"type": "string"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "twitter",
+				"widgets": [
+					{
+						"name": "twitter_feed",
+						"description": "Affichage de la liste des tweets sur un feed",
+						"params": [
+							{
+								"name": "link",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "tweet",
+						"description": "Affichage d'un tweet voulu (citation)",
+						"params": [
+							{
+								"name": "link",
+								"type": "string"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "facebook",
+				"widgets": [
+					{
+						"name": "facebook_feed",
+						"description": "Affichage de la liste des posts d'une page",
+						"params": [
+							{
+								"name": "page",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "message",
+						"description": "envoi de messages à une page",
+						"params": [
+							{
+								"name": "page",
+								"type": "string"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "yammer",
+				"widgets": [
+					{
+						"name": "yammer_group",
+						"description": "Affichage de la liste des posts sur un groupe",
+						"params": [
+							{
+								"name": "feedID",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "user",
+						"description": "Affichage des messages d'un user",
+						"params": [
+							{
+								"name": "userID",
+								"type": "string"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "Spotify",
+				"widgets": [
+					{
+						"name": "spotify_album",
+						"description": "Affichage et écoute de musiques d'un album",
+						"params": [
+							{
+								"name": "link",
+								"type": "string"
+							}
+						]
+					},
+					{
+						"name": "artist",
+						"description": "Affichage d'un bouton de follow d'un artiste",
+						"params": [
+							{
+								"name": "like",
+								"type": "string"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+<head>
+	<% include ../partials/head2 %>
+</head>
+
+<style>
+	input[type=text], select, textarea {
+	    width: 100%;
+	    padding: 12px;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	    box-sizing: border-box;
+	    margin-top: 6px;
+	    margin-bottom: 16px;
+	    resize: vertical;
+	}
+
+	input[type=submit] {
+	    color: white;
+	    padding: 12px 20px;
+	    border: none;
+	    border-radius: 4px;
+	    cursor: pointer;
+	}
+
+	.container {
+	    border-radius: 5px;
+	    background-color: #f2f2f2;
+	    padding: 20px;
+	}
+
+	.double_label{
+		display : inline-block;
+		width: 100%;
+	}
+	.double_label .label{
+		width: 48%;
+		float:left;
+	}
+	.double_label 1 {
+		margin-rigth: 30px;
+	}
+</style>
+
+<body>
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<div>
+		<div class="w3-container w3-center w3-green" style="padding-top: 300px; padding-bottom: 300px;">
+			<h1>BIENVENUE SUR LA PAGE DE PARAMETRES</h1>
+			<p></p>
+		</div>
+	</div>
+
+	<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+	<!-- The Band Section -->
+	<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="facebook">
+		<h2>VOS DONNEES</h2>
+		<form action="/settings" method="post">
+			<% if (user.local.login) { %>
+				<label for="fname"> LOGIN : <%= user.local.login %> </label>
+			<% } %>
+
+			<% if (user.local.age) { %>
+				<p> AGE : <%= user.local.age %> </p>
+			<% } else { %>
+				<p> Vous n'avez pas encore rentré votre âge </p>
+			<% } %>
+			<label for="fname">Mettez à jour votre âge</label>
+			<input type="text" id="fname" name="age" placeholder="40"/>
+
+			<% if (user.local.famille) { %>
+				<p> FAMILLE : <%= user.local.famille %> </p>
+			<% } else { %>
+				<p> Vous n'avez pas encore rentré vor famille </p>
+			<% } %>
+			<label for="fname">Mettez à jour votre famille</label>
+			<input type="text" id="fname" name="famille" placeholder="famille"/>
+
+			<% if (user.local.role) { %>
+				<p> ROLE : <%= user.local.role %> </p>
+			<% } else { %>
+				<p> Vous n'avez pas encore rentré vor role </p>
+			<% } %>
+			<label for="fname">Mettez à jour votre rôle</label>
+			<input type="text" id="fname" name="role" placeholder="casseur/ protection..."/>
+
+			<% if (user.local.nourriture) { %>
+				<p> NOURITTURE : <%= user.local.nourriture %> </p>
+			<% } else { %>
+				<p> Vous n'avez pas encore rentré vor nourriture </p>
+			<% } %>
+			<label for="fname">Mettez à jour votre nourriture</label>
+			<input type="text" id="fname" name="nourriture" placeholder="salade"/>
+
+			<input type="submit" value="Submit"/>
+		</form>
+	</div>
+</body>
+</html> 

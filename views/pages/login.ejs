@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dashboard</title>
+	<style> 
+	body {
+		background-image: url('https://cdni.rt.com/french/images/2018.11/article/5bf82d6709fac2513b8b4569.JPG');
+		height: 100vh;
+		width: 100%;
+	}
+	.box {
+		width: 50%;
+		height: 50%;
+		margin: auto;
+		background-color: white;
+		text-align: center;
+	}
+	 </style>
+</head>
+<body>
+	
+	<div>
+		<div class="box">
+			<div>
+				<form action="/login" method="post">
+					<h1 >
+						Sign In With
+					</h1>
+					<div >
+						<span>
+							Username
+						</span>
+					</div>
+					<div data-validate = "Username is required">
+						<input type="text" name="login" >
+						<span ></span>
+					</div>
+					
+					<div>
+						<span>
+							Password
+						</span>
+					</div>
+					<div data-validate = "Password is required">
+						<input type="password" name="password" >
+					</div>
+
+					<div >
+						<button>
+							Sign In
+						</button>
+					</div>
+
+					<div>
+						<span>
+							Not a member?
+						</span>
+
+						<a href="/signup">
+							Sign up now
+						</a>
+						<br>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head2 %>
+</head>
+<body>
+<style>
+	input[type=text], select, textarea {
+	    width: 100%; /* Full width */
+	    padding: 12px; /* Some padding */  
+	    border: 1px solid #ccc; /* Gray border */
+	    border-radius: 4px; /* Rounded borders */
+	    box-sizing: border-box; /* Make sure that padding and width stays in place */
+	    margin-top: 6px; /* Add a top margin */
+	    margin-bottom: 16px; /* Bottom margin */
+	    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+	}
+
+	input[type=submit] {
+		background-color: red;
+	    color: white;
+	    padding: 12px 20px;
+	    border: none;
+	    border-radius: 4px;
+	    cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+		background-color: black;
+	}
+
+	.container {
+	    border-radius: 5px;
+	    background-color: #f2f2f2;
+	    padding: 20px;
+	}
+
+	.double_label{
+		display : inline-block;
+		width: 100%;
+	}
+	.double_label .label{
+		width: 48%;
+		float:left;
+	}
+	.double_label 1 {
+		margin-rigth: 30px;
+	}
+
+	.no {
+		color:red;
+	}
+	.yes {
+		color:green;
+	}
+	.info {
+		padding-right: 200px;
+		padding-left: 200px;
+	}
+</style>
+<header>
+	<% include ../partials/header %>
+</header>
+
+<div class="w3-container w3-center w3-red" style="padding-top: 150px; padding-bottom: 150px;">
+	<h1>WELCOME TO THE PROFIL PAGE</h1>
+	<p>SEE THE ACTUAL SETTINGS OF YOUR WIDGETS</p>
+</div>
+
+<div class="w3-container">
+	<h2 class="w3-wide w3-center">PROFIL</h2>
+	<div class=" info">
+		<% if (user.local.name ) { %>
+			<p> NAME : <%= user.local.name %> <p>
+		<% } %>
+		<% if (user.local.email) { %>
+			<p> EMAIL : <%= user.local.email %> <p>
+		<% } %>
+	</div>
+	<h2 class="w3-wide w3-center">FACEBOOK</h2>
+	<div class="info">
+		<p> LINK FULL PAGE : </p>
+		<% if (user.widgets.facebook.page) { %>
+			<%= user.widgets.facebook.page %>
+		<% } else { %>
+			<a href="/settings#facebook">Click here to set a link</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.facebook.display_page ) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+		<br>
+		<p> LINK FULL COM OR LIKE PAGE : <p>
+		<% if (user.widgets.facebook.page_com) { %>
+			<%= user.widgets.facebook.page_com %>
+		<% } else { %>
+			<a href="/settings#facebook">Click here to set a link</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.facebook.display_page_com ) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+	</div>
+	<h2 class="w3-wide w3-center">TWITTER</h2>
+	<div class="info">
+		<p> LINK PAGE FEED : </p>
+		<% if (user.widgets.twitter.page) { %>
+			<%= user.widgets.twitter.page %>
+		<% } else { %>
+			<a href="/settings#twitter">Click here to set a link</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.twitter.display_page ) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+		<br>
+		<p> LINK TWEET : <p>
+		<% if (user.widgets.twitter.tweet) { %>
+			<%= user.widgets.twitter.tweet %>
+		<% } else { %>
+			<a href="/settings#twitter">Click here to set a link</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.twitter.display_tweet) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+	</div>
+	<h2 class="w3-wide w3-center">YAMMER</h2>
+	<div class="info">
+		<p> LINK USER FEED : </p>
+		<% if (user.widgets.yammer.userfeed) { %>
+			<%= user.widgets.yammer.userfeed %>
+		<% } else { %>
+			<a href="/settings#yammer">Click here to set a link</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.yammer.display_user ) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+		<br>
+		<p> LINK GROUP FEED : <p>
+		<% if (user.widgets.yammer.groupfeed) { %>
+			<%= user.widgets.yammer.groupfeed %>
+		<% } else { %>
+			<a href="/settings#yammer">Click here to set a link</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.yammer.display_group) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+	</div>
+	<h2 class="w3-wide w3-center">METEO</h2>
+	<div class="info">
+		<% if (!user.widgets.weather.display) { %>
+				<span> DISPLAY : <p class="no">NO</p> </span>
+			<% } else { %>	
+				<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+	</div>
+	<h2 class="w3-wide w3-center">SPOTIFY</h2>
+	<div class="info">
+		<p> ID SPOTIFY ALBUM : </p>
+		<% if (user.widgets.spotify.album) { %>
+			<%= user.widgets.spotify.album %>
+		<% } else { %>
+			<a href="/settings#spotify">Click here to set an Id</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.spotify.display_album ) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+		<br>
+		<p> ID SPOTIFY ARTIST : <p>
+		<% if (user.widgets.spotify.artiste) { %>
+			<%= user.widgets.spotify.artiste %>
+		<% } else { %>
+			<a href="/settings#spotify">Click here to set an Id</a>
+		<% } %>
+		<br>
+		<br>
+		<% if (!user.widgets.spotify.display_artiste) { %>
+			<span> DISPLAY : <p class="no">NO</p> </span>
+		<% } else { %>	
+			<span> DISPLAY : <p class="yes">YES</p> </span>
+		<% } %>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="w3-center">
+		<a href="/logout"><input type="submit" value="Logout"></a>
+	</div>
+	<br>
+	<br>
+	<br>
+</div>
+
+<% include ../partials/footer %>
+</body>
+</html>
