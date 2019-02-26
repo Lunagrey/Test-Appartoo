@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head2 %>
+</head>
+
+<body>
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<div class="w3-content" style="max-width:2000px;margin-top:46px">
+		<form class="w3-container w3-content w3-center w3-padding-64" action="/addevent" method="post">
+			<h1>
+				VOTRE NOUVEL EVENEMENT
+                        </h1>
+                        
+			<div >
+				<span>
+					Lieu
+				</span>
+			</div>
+			<div data-validate = "Lieu is required">
+				<input type="text" name="lieu" >
+			</div>
+			<br/>
+			<div>
+				<span>
+					Date
+				</span>
+			</div>
+			<div data-validate = "Date is required">
+				<input type="date" name="date" >
+                        </div>
+                        <br/>
+                        <div>
+				<span>
+					Heure
+				</span>
+			</div>
+			<div data-validate = "Hour is required">
+				<input type="time" name="heure" >
+                        </div>
+                        <br/>
+                        <br/>
+			<div >
+                                <input type="submit" name="Créer un évenement" >
+			</div>
+		</form>
+	</div>
+</body>
+</html> 

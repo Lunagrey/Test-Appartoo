@@ -8,7 +8,8 @@ var userSchema = mongoose.Schema({
 		age		: Number,
 		famille		: String,
 		role		: String,
-		nourriture	: String
+		nourriture	: String,
+		friends		: Array
 	}
 });
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head2 %>
+</head>
+
+<style>
+	input[type=text], select, textarea {
+	    width: 100%;
+	    padding: 12px;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	    box-sizing: border-box;
+	    margin-top: 6px;
+	    margin-bottom: 16px;
+	    resize: vertical;
+	}
+
+	input[type=submit] {
+	    color: white;
+	    padding: 12px 20px;
+	    border: none;
+	    border-radius: 4px;
+	    cursor: pointer;
+	    background-color: #4CAF50;
+	}
+
+	.container {
+	    border-radius: 5px;
+	    background-color: #4CAF50;
+	    padding: 5px;
+	}
+
+	.double_label{
+		display : inline-block;
+		width: 100%;
+	}
+	.double_label .label{
+		width: 48%;
+		float:left;
+	}
+	.double_label {
+		margin-right: 30px;
+	}
+
+	.line {
+		width: 100%;
+		text-align: center;
+	}
+
+	.friend {
+		color: green
+	}
+</style>
+
+<body>
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<div>
+		<div class="w3-container w3-center w3-green" style="padding-top: 300px; padding-bottom: 300px;">
+			<h1>BIENVENUE SUR LA PAGE D'AMIS</h1>
+			<p></p>
+		</div>
+	</div>
+
+	<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+	<!-- The Band Section -->
+	<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="facebook">
+	<form action="/friends" method="post">
+		<% for(var i = 0; i < users.length; i++) { %>
+			<% if (users[i].local.login != user.local.login) { %>
+				<div class="line">
+						<p><%= users[i].local.login %></p>
+					<% if (!(user.local.friends.find( friend => friend == users[i].local.login))) { %>
+						<input type="checkbox" name="friend" value=<%=users[i].local.login%>>
+					<% } else { %>
+						<p class="friend">Déjà amis</p>
+					<% } %>
+				</div>
+			<% } %>
+		<% } %>
+		<input type="submit" name="submited" value="Ajouter les personnes selectionnées aux amis">
+	</form>
+	</div>
+</body>
+</html> 
